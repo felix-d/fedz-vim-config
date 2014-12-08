@@ -5,4 +5,4 @@ Tired of bloated distributions..
 
 **Installation**
 
-``git clone https://github.com/flexdec/fedz-vim-config.git ~/.vim``
+``git clone https://github.com/flexdec/fedz-vim-config.git ~/.vim && ~/.vim/install``
