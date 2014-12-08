@@ -3,11 +3,11 @@ VUNDLE_URI="https://github.com/gmarik/vundle.git"
 if [ ! -e "$HOME/.vim/bundle/Vundle.vim" ]; then
 	git clone $VUNDLE_URI "$HOME/.vim/bundle/Vundle.vim"
 fi
-
+git clone "https://github.com/Shougo/neocomplete.vim" $HOME/.vim/neocomplete.vim
+mv -n $HOME/.vim/neocomplete.vim/* $HOME/.vim/
+rm -fr $HOME/.vim/neocomplete.vim
 if [ -e "$HOME/.vimrc" ]; then
     mv $HOME/.vimrc $HOME/.vimrc.old
 fi
-ln -s $HOME/.vim/.vimrc_bundles $HOME/.vimrc
-vim +PluginInstall +qall
-rm $HOME/.vimrc
 ln -s $HOME/.vim/.vimrc $HOME
+vim +PluginInstall +qall
