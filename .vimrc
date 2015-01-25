@@ -23,6 +23,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
+Plugin 'mattn/emmet-vim'
+Plugin 'tmhedberg/matchit'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " }}}
@@ -33,8 +35,8 @@ let base16colorspace=256
 colorscheme base16-railscasts
 syntax enable           " enable syntax processing
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
 set number              " show line numbers
@@ -85,9 +87,6 @@ nnoremap k gk
 "Beginning and end of line
 nnoremap B ^
 nnoremap E $
-
-"add line with C-o
-nmap <C-o> o<Esc>
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -242,11 +241,11 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
